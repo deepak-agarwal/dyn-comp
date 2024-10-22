@@ -1,0 +1,3 @@
+{"level":"info","message":"Request started","requestId":"62e9a242-38fa-4f1b-8584-84c57f439280"}
+{"level":"info","message":"[\n"}
+{"level":"info","message":{"body":{"query":"an instagram component"},"email":"deepaka@geekyants.com","method":"POST","url":"/component/new"}}

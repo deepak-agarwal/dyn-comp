@@ -1,0 +1,3 @@
+{"level":"info","message":"Request started","requestId":"cde95a60-e595-4920-be94-935b2521c8cd"}
+{"level":"info","message":"[\n"}
+{"level":"info","message":{"body":{"componentId":"productpricing_tdhaq","query":"its not structured properly"},"email":"deepaka@geekyants.com","method":"POST","url":"/component/iterate"}}

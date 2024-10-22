@@ -1,0 +1,278 @@
+---
+title: Avatar
+description: The Avatar component is a versatile UI element representing a user with profile pictures, initials, or a fallback icon. It adds a personal touch to the user interface, making it more engaging.
+pageTitle: Avatar
+pageDescription: The Avatar component is a versatile UI element representing a user with profile pictures, initials, or a fallback icon. It adds a personal touch to the user interface, making it more engaging.
+showHeader: true
+component: true
+---
+
+```jsx
+import {
+  Avatar,
+  AvatarBadge,
+  AvatarFallbackText,
+  AvatarImage
+} from '@gluestack-ui/themed'
+```
+
+### usage
+
+```jsx
+<AvatarGroup>
+  <Avatar>
+    <AvatarFallbackText />
+    <AvatarImage />
+    <AvatarBadge />
+  </Avatar>
+</AvatarGroup>
+```
+
+### example
+
+```jsx
+import React from 'react'
+import {
+  Avatar,
+  AvatarBadge,
+  AvatarFallbackText,
+  AvatarImage
+} from '@gluestack-ui/themed'
+
+export default function AvatarExample() {
+  return (
+    <Avatar bgColor='$amber600' {...props}>
+      <AvatarFallbackText>Sandeep Srivastava</AvatarFallbackText>
+    </Avatar>
+  )
+}
+```
+
+```jsx
+import React from 'react'
+import {
+  Avatar,
+  AvatarGroup,
+  AvatarBadge,
+  AvatarFallbackText,
+  AvatarImage,
+  HStack,
+  VStack,
+  Text
+} from '@gluestack-ui/themed'
+
+export default function AvatarExample() {
+  return (
+    <VStack space='2xl'>
+      <HStack space='md'>
+        <Avatar bgColor='$indigo600'>
+          <AvatarFallbackText>Ronald Richards</AvatarFallbackText>
+          <AvatarBadge
+            sx={{
+              _dark: {
+                borderColor: '$black'
+              }
+            }}
+          />
+        </Avatar>
+        <VStack>
+          <Heading size='sm'>Ronald Richards</Heading>
+          <Text size='sm'>Nursing Assistant</Text>
+        </VStack>
+      </HStack>
+      <HStack space='md'>
+        <Avatar bgColor='$orange600'>
+          <AvatarFallbackText>Arlene McCoy</AvatarFallbackText>
+        </Avatar>
+        <VStack>
+          <Heading size='sm'>Arlene McCoy</Heading>
+          <Text size='sm'>Marketing Coordinator</Text>
+        </VStack>
+      </HStack>
+    </VStack>
+  )
+}
+```
+
+```jsx
+import React from 'react'
+import {
+  Avatar,
+  AvatarGroup,
+  AvatarBadge,
+  AvatarFallbackText,
+  AvatarImage,
+  HStack,
+  VStack,
+  Text
+} from '@gluestack-ui/themed'
+
+export default function AvatarExample() {
+  return (
+    <VStack space='2xl'>
+      <HStack space='md'>
+        <Avatar>
+          <AvatarFallbackText>SS</AvatarFallbackText>
+          <AvatarImage
+            source={{
+              uri: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60'
+            }}
+          />
+        </Avatar>
+        <VStack>
+          <Heading size='sm'>Ronald Richards</Heading>
+          <Text size='sm'>Nursing Assistant</Text>
+        </VStack>
+      </HStack>
+      <HStack space='md'>
+        <Avatar>
+          <AvatarFallbackText>SS</AvatarFallbackText>
+          <AvatarImage
+            source={{
+              uri: 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60'
+            }}
+          />
+        </Avatar>
+        <VStack>
+          <Heading size='sm'>Arlene McCoy</Heading>
+          <Text size='sm'>Marketing Coordinator</Text>
+        </VStack>
+      </HStack>
+    </VStack>
+  )
+}
+```
+
+```jsx
+import React from 'react'
+import {
+  Avatar,
+  AvatarGroup,
+  AvatarBadge,
+  AvatarFallbackText,
+  AvatarImage,
+  HStack,
+  VStack,
+  Text
+} from '@gluestack-ui/themed'
+
+export default function AvatarExample() {
+  return (
+    <AvatarGroup>
+      <Avatar size='md'>
+        <AvatarFallbackText>John Doe</AvatarFallbackText>
+        <AvatarImage
+          source={{
+            uri: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
+          }}
+        />
+      </Avatar>
+      <Avatar size='md'>
+        <AvatarFallbackText>John Doe</AvatarFallbackText>
+        <AvatarImage
+          source={{
+            uri: 'https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'
+          }}
+        />
+      </Avatar>
+      <Avatar size='md'>
+        <AvatarFallbackText>John Doe</AvatarFallbackText>
+        <AvatarImage
+          source={{
+            uri: 'https://images.unsplash.com/photo-1614289371518-722f2615943d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
+          }}
+        />
+      </Avatar>
+      <Avatar size='md'>
+        <AvatarFallbackText>John Doe</AvatarFallbackText>
+        <AvatarImage
+          source={{
+            uri: 'https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'
+          }}
+        />
+      </Avatar>
+    </AvatarGroup>
+  )
+}
+```
+
+```jsx
+import React from 'react'
+import {
+  Avatar,
+  AvatarGroup,
+  AvatarBadge,
+  AvatarFallbackText,
+  AvatarImage,
+  HStack,
+  VStack,
+  Text
+} from '@gluestack-ui/themed'
+
+export default function AvatarExample() {
+  return (
+    <AvatarGroup>
+      <Avatar size='md'>
+        <AvatarFallbackText>John Doe</AvatarFallbackText>
+        <AvatarImage
+          source={{
+            uri: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
+          }}
+        />
+        <AvatarBadge
+          sx={{
+            _dark: {
+              borderColor: '$black'
+            }
+          }}
+        />
+      </Avatar>
+      <Avatar size='md'>
+        <AvatarFallbackText>John Doe</AvatarFallbackText>
+        <AvatarImage
+          source={{
+            uri: 'https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'
+          }}
+        />
+        <AvatarBadge
+          sx={{
+            _dark: {
+              borderColor: '$black'
+            }
+          }}
+        />
+      </Avatar>
+      <Avatar size='md'>
+        <AvatarFallbackText>John Doe</AvatarFallbackText>
+        <AvatarImage
+          source={{
+            uri: 'https://images.unsplash.com/photo-1614289371518-722f2615943d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
+          }}
+        />
+        <AvatarBadge
+          sx={{
+            _dark: {
+              borderColor: '$black'
+            }
+          }}
+        />
+      </Avatar>
+      <Avatar size='md'>
+        <AvatarFallbackText>John Doe</AvatarFallbackText>
+        <AvatarImage
+          source={{
+            uri: 'https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'
+          }}
+        />
+        <AvatarBadge
+          sx={{
+            _dark: {
+              borderColor: '$black'
+            }
+          }}
+        />
+      </Avatar>
+    </AvatarGroup>
+  )
+}
+```

@@ -1,0 +1,107 @@
+---
+title: Modal
+description: A Modal is a window on top of the primary content to draw the user's attention to important information or actions. It provides a focused and interruptive way to interact with the application.
+pageTitle: Modal
+pageDescription: A Modal is a window on top of the primary content to draw the user's attention to important information or actions. It provides a focused and interruptive way to interact with the application.
+component:true
+showHeader: true
+---
+
+```jsx
+import { Modal } from '@gluestack-ui/themed'
+```
+
+```jsx
+<Modal>
+  <ModalBackdrop />
+  <ModalContent>
+    <ModalHeader>
+      <ModalCloseButton></ModalCloseButton>
+    </ModalHeader>
+    <ModalBody />
+    <ModalFooter />
+  </ModalContent>
+</Modal>
+```
+
+### Examples
+
+#### Basic
+
+```jsx
+import React, { useState } from 'react'
+import {
+  Modal,
+  ModalBackdrop,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  ModalFooter,
+  Button
+} from '@gluestack-ui/themed'
+
+const ModalExample = () => {
+  const [isOpen, setIsOpen] = useState(false)
+  const onClose = () => setIsOpen(false)
+  const onOpen = () => setIsOpen(true)
+  return (
+    <>
+      <Button onClick={onOpen}>Open Modal</Button>
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalBackdrop />
+        <ModalContent>
+          <ModalHeader>
+            <ModalCloseButton onClick={onClose} />
+          </ModalHeader>
+          <ModalBody>
+            <p>Modal Body</p>
+          </ModalBody>
+          <ModalFooter>
+            <Button onClick={onClose}>Close</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+    </>
+  )
+}
+```
+
+```jsx
+import React, { useState } from 'react'
+import {
+  Modal,
+  ModalBackdrop,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  ModalFooter,
+  Button
+} from '@gluestack-ui/themed'
+
+const ModalExample = () => {
+  const [isOpen, setIsOpen] = useState(false)
+  const onClose = () => setIsOpen(false)
+  const onOpen = () => setIsOpen(true)
+  return (
+    <>
+      <Button onClick={onOpen}>Open Modal</Button>
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalBackdrop />
+        <ModalContent>
+          <ModalHeader>
+            <ModalCloseButton onClick={onClose} />
+          </ModalHeader>
+          <ModalBody>
+            <p>Modal Body</p>
+          </ModalBody>
+          <ModalFooter>
+            <Button onClick={onClose}>Close</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+    </>
+  )
+}
+```

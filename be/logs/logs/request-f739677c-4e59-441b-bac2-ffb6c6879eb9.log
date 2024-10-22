@@ -1,0 +1,3 @@
+{"level":"info","message":"Request started","requestId":"f739677c-4e59-441b-bac2-ffb6c6879eb9"}
+{"level":"info","message":"[\n"}
+{"level":"info","message":{"body":{"query":"component with text and image"},"method":"POST","url":"/component/new"}}

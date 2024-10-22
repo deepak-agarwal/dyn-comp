@@ -1,0 +1,103 @@
+---
+title: Checkbox
+description: Whether you're building a simple form or a complex data collection system, the Checkbox component offers a user-friendly way for users to select multiple options from a list.
+pageTitle: Checkbox
+pageDescription: Whether you're building a simple form or a complex data collection system, the Checkbox component offers a user-friendly way for users to select multiple options from a list.
+showHeader: true
+component:true
+---
+
+```jsx
+import {
+  Checkbox,
+  CheckboxGroup,
+  CheckboxIndicator,
+  CheckboxIcon,
+  CheckboxLabel
+} from '@gluestack-ui/themed'
+```
+
+### Usage
+
+```jsx
+<CheckboxGroup>
+  <Checkbox>
+    <CheckboxIndicator>
+      <CheckboxIcon />
+    </CheckboxIndicator>
+    <CheckboxLabel />
+  </Checkbox>
+</CheckboxGroup>
+```
+
+### Examples
+
+#### Checkbox
+
+```jsx
+import {
+  Checkbox,
+  CheckboxIndicator,
+  CheckboxIcon,
+  CheckboxLabel
+} from '@gluestack-ui/themed'
+
+const CheckBoxExample = (props) => {
+  return (
+    <Checkbox {...props}>
+      <CheckboxIndicator mr='$2'>
+        <CheckboxIcon as={CheckIcon} />
+      </CheckboxIndicator>
+      <CheckboxLabel>Label</CheckboxLabel>
+    </Checkbox>
+  )
+}
+```
+
+```jsx
+import { useState } from 'react'
+import {
+  Checkbox,
+  CheckboxGroup,
+  CheckboxIndicator,
+  CheckboxIcon,
+  CheckboxLabel,
+  Center,
+  CheckIcon,
+  Icon,
+  VStack
+} from '@gluestack-ui/themed'
+
+const CheckBoxExample = (props) => {
+  const [values, setValues] = useState(['Eng'])
+  return (
+    <CheckboxGroup
+      value={values}
+      onChange={(keys) => {
+        setValues(keys)
+      }}
+    >
+      <VStack space='3xl'>
+        <Checkbox value='Eng'>
+          <CheckboxIndicator mr='$2'>
+            <CheckboxIcon as={CheckIcon} />
+          </CheckboxIndicator>
+          <CheckboxLabel>Framer</CheckboxLabel>
+        </Checkbox>
+        <Checkbox value='invison'>
+          <CheckboxIndicator mr='$2'>
+            <CheckboxIcon as={CheckIcon} />
+          </CheckboxIndicator>
+          <CheckboxLabel>Invision Studio</CheckboxLabel>
+        </Checkbox>
+        <Checkbox value='adobe'>
+          <CheckboxIndicator mr='$2'>
+            <CheckboxIcon as={CheckIcon} />
+          </CheckboxIndicator>
+          <CheckboxLabel>Adobe XD</CheckboxLabel>
+        </Checkbox>
+      </VStack>
+    </CheckboxGroup>
+  )
+}
+```

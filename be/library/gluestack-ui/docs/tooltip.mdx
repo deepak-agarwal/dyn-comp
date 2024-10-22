@@ -1,0 +1,192 @@
+---
+title: Tooltip
+description: Whether you need to provide helpful hints to new users or display extra details for power users, the Tooltip component is a simple and effective way.
+pageTitle: Tooltip
+pageDescription: Whether you need to provide helpful hints to new users or display extra details for power users, the Tooltip component is a simple and effective way.
+component:true
+showHeader: true
+---
+
+```jsx
+import { Tooltip } from '@gluestack-ui/themed'
+```
+
+```jsx
+<Tooltip>
+  <TooltipContent>
+    <TooltipText />
+  </TooltipContent>
+</Tooltip>
+```
+
+### Examples
+
+```jsx
+import React from 'react'
+import { Tooltip, TooltipContent, TooltipText } from '@gluestack-ui/themed'
+const TooltipExample = (props) => (
+  <Tooltip
+    {...props}
+    trigger={(triggerProps) => {
+      return (
+        <Button h='$24' {...triggerProps}>
+          <ButtonText>Hover on me!</ButtonText>
+        </Button>
+      )
+    }}
+  >
+    <TooltipContent>
+      <TooltipText>Tooltip</TooltipText>
+    </TooltipContent>
+  </Tooltip>
+)
+```
+
+```jsx
+import React from 'react'
+import {
+  Avatar,
+  AvatarGroup,
+  AvatarFallbackText,
+  Wrapper,
+  HStack,
+  Tooltip,
+  TooltipContent,
+  TooltipText,
+  Text,
+  Box,
+  Heading,
+  VStack,
+  Center
+} from '@gluestack-ui/themed'
+const TooltipExample = (props) => {
+  const avatars = [
+    {
+      src: 'https://example.com.jpg',
+      alt: 'Sandeep Srivastva',
+      color: '$emerald600'
+    },
+    { src: 'https://example.com.jpg', alt: 'Arjun Kapoor', color: '$cyan600' },
+    {
+      src: 'https://example.com.jpg',
+      alt: 'Ritik Sharma ',
+      color: '$indigo600'
+    }
+  ]
+  return (
+    <Box h='$96' justifyContent='center'>
+      <AvatarGroup flexDirection='row'>
+        <Tooltip
+          placement={'top'}
+          trigger={(triggerProps) => {
+            return (
+              <Avatar
+                size='lg'
+                color='$white'
+                borderColor='$white'
+                borderWidth='$2'
+                sx={{ _dark: { borderColor: '$black' } }}
+                {...triggerProps}
+              >
+                <AvatarFallbackText>+ 3</AvatarFallbackText>
+              </Avatar>
+            )
+          }}
+        >
+          <TooltipContent
+            p='$5'
+            maxWidth='$72'
+            sx={{
+              bg: '$white',
+              _dark: {
+                bg: '$backgroundDark900'
+              }
+            }}
+          >
+            <VStack boderRadius='$2' space='md'>
+              <Heading size='sm' lineHeight='$md'>
+                View all members of this channel
+              </Heading>
+              <Center>
+                <Text fontSize='$sm' lineHeight='$md'>
+                  Includes John, Sarah, Mike, Emily
+                </Text>
+                <Text fontSize='$sm' lineHeight='$md'>
+                  and David
+                </Text>
+              </Center>
+            </VStack>
+          </TooltipContent>
+        </Tooltip>
+        {avatars.map((avatar, index) => {
+          return (
+            <Avatar
+              key={index}
+              size='lg'
+              borderColor='$white'
+              borderWidth='$2'
+              bgColor={avatar.color}
+              sx={{ _dark: { borderColor: '$black' } }}
+            >
+              <AvatarFallbackText>{avatar.alt}</AvatarFallbackText>
+            </Avatar>
+          )
+        })}
+      </AvatarGroup>
+    </Box>
+  )
+}
+```
+
+```jsx
+import React from 'react'
+import {
+  Avatar,
+  AvatarFallbackText,
+  HStack,
+  Tooltip,
+  TooltipContent,
+  TooltipText,
+  Text,
+  Box,
+  Edit,
+  Icon
+} from '@gluestack-ui/themed'
+const TooltipExample = (props) => {
+  return (
+    <Box h='$96' justifyContent='center'>
+      <Tooltip
+        placement={'top'}
+        trigger={(triggerProps) => {
+          return (
+            <Avatar size='md' {...triggerProps} bg='$indigo600'>
+              <Icon as={Edit} color='$white' size='sm' />
+            </Avatar>
+          )
+        }}
+      >
+        <TooltipContent
+          sx={{
+            bg: '$white',
+            _dark: {
+              bg: '$backgroundDark900'
+            }
+          }}
+        >
+          <Box p='$2.5' boderRadius='$2'>
+            <Text size='sm'>New message</Text>
+            <HStack space='xs' p='$1' ml='$3'>
+              <Avatar size='xs' bg='$trueGray500' rounded='$sm'>
+                <Icon as={Command} color='$white' />
+              </Avatar>
+              <Avatar size='xs' bg='$trueGray500' rounded='$sm'>
+                <AvatarFallbackText>N</AvatarFallbackText>
+              </Avatar>
+            </HStack>
+          </Box>
+        </TooltipContent>
+      </Tooltip>
+    </Box>
+  )
+}
+```

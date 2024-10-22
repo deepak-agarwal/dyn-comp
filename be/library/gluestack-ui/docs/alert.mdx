@@ -1,0 +1,39 @@
+---
+title: Slider Alert
+description: Alerts are used to communicate the status of a system, feature, or page. They indicate a specific state that may require attention from the user.
+pageTitle: Alert
+component:true
+---
+
+### Import
+
+To use the component in your project, run the command below into your import statement. This will import the component from your components folder.
+
+```jsx
+import { Alert, AlertIcon, AlertText } from '@gluestack-ui/themed'
+```
+
+### Usage
+
+```jsx
+<Alert>
+  <AlertIcon />
+  <AlertText>This is an alert</AlertText>
+</Alert>
+```
+
+### example
+
+```jsx
+import React from 'react'
+import { Alert, AlertIcon, AlertText } from '@gluestack-ui/themed'
+
+const AlertExample = () => {
+  return (
+    <Alert>
+      <AlertIcon />
+      <AlertText>This is an alert</AlertText>
+    </Alert>
+  )
+}
+```

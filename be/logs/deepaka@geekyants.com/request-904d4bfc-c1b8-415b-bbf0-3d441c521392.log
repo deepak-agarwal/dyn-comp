@@ -1,0 +1,3 @@
+{"level":"info","message":"Request started","requestId":"904d4bfc-c1b8-415b-bbf0-3d441c521392"}
+{"level":"info","message":"[\n"}
+{"level":"info","message":{"body":{"componentId":"null","query":"a tweet card"},"email":"deepaka@geekyants.com","method":"POST","url":"/component/iterate"}}

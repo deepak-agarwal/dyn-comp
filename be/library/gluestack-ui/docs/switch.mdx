@@ -1,0 +1,44 @@
+---
+title: Switch
+description: The Switch component offers a stylish alternative to the Checkbox, allowing users to enable or disable an option with a sleek sliding motion. This component is perfect for adding a touch of elegance and interactivity to your user interface.
+pageTitle: Switch
+pageDescription: The Switch component offers a stylish alternative to the Checkbox, allowing users to enable or disable an option with a sleek sliding motion. This component is perfect for adding a touch of elegance and interactivity to your user interface.
+component: true
+showHeader: true
+---
+
+```jsx
+import { Switch } from '@gluestack-ui/themed'
+```
+
+### usage
+
+```jsx
+<Switch />
+```
+
+### examples
+
+```jsx
+import { Switch } from '@gluestack-ui/themed'
+
+const switchExample = () => {
+  const [checked, setChecked] = React.useState(false)
+
+  return (
+    <>
+      <Switch
+        checked={checked}
+        onChange={() => setChecked(!checked)}
+        label='Switch'
+      />
+      <Switch
+        checked={checked}
+        onChange={() => setChecked(!checked)}
+        label='Switch'
+        disabled
+      />
+    </>
+  )
+}
+```

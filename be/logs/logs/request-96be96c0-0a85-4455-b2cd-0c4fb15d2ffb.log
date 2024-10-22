@@ -1,0 +1,3 @@
+{"level":"info","message":"Request started","requestId":"96be96c0-0a85-4455-b2cd-0c4fb15d2ffb"}
+{"level":"info","message":"[\n"}
+{"level":"info","message":{"body":{"query":"a normal cart"},"method":"POST","url":"/component/new"}}

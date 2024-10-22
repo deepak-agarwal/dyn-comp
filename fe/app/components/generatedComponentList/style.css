@@ -1,0 +1,53 @@
+.generated-component-list-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.generated-component-list-item {
+    margin: 0.5rem;
+    cursor: pointer;
+    border: 1px solid #000;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.generated-component-list-item:hover {
+    padding-left: 1rem;
+    transition-duration: 200ms;
+}
+
+generated-component-list-title {
+    padding: 0.5rem 0.5rem 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.generated-component-list-title-bold {
+    font-weight: bold;
+    word-break: break-word;
+}
+
+.generated-component-list-title-text {
+    font-size: 0.75rem;
+}
+
+.generated-component-list-component {
+    cursor: pointer;
+    padding: 0.75rem;
+    max-height: 14rem;
+    max-width: 20rem;
+    overflow: hidden;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    transition: transform 0.4s ease-in-out;
+}
+
+.generated-component-list-component:hover {
+    margin: -1px;
+    transform: scale(0.9);
+    
+}
+
+/* Define media queries for responsiveness if needed. */

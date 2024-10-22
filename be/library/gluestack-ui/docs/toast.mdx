@@ -1,0 +1,141 @@
+---
+title: Toast
+description: Toast is a component that can display alerts, notifications, or messages on top of an overlay layer. It is commonly used to inform users of important information or actions.
+pageTitle: Toast
+pageDescription: Toast is a component that can display alerts, notifications, or messages on top of an overlay layer. It is commonly used to inform users of important information or actions.
+component:true
+showHeader: true
+---
+
+```jsx
+import { Toast, ToastTitle, ToastDescription } from '@gluestack-ui/themed'
+```
+
+### Usage
+
+```jsx
+<Toast>
+  <ToastTitle />
+  <ToastDescription />
+</Toast>
+```
+
+### Example
+
+```jsx
+import {
+  Toast,
+  ToastTitle,
+  ToastDescription,
+  useToast
+} from '@gluestack-ui/themed'
+
+const Example = () => {
+  const toast = useToast()
+  return (
+    <Button
+      onPress={() => {
+        toast.show({
+          placement: 'top',
+          render: ({ id }) => {
+            return (
+              <Toast nativeID={id} {...props}>
+                <VStack space='xs'>
+                  <ToastTitle>New Message</ToastTitle>
+                  <ToastDescription>
+                    Hey, just wanted to touch base and see how you're doing.
+                    Let's catch up soon!
+                  </ToastDescription>
+                </VStack>
+              </Toast>
+            )
+          }
+        })
+      }}
+    >
+      <ButtonText>Press Me</ButtonText>
+    </Button>
+  )
+}
+```
+
+```jsx
+import {
+  Toast,
+  ToastTitle,
+  ToastDescription,
+  useToast,
+  Text,
+  Button,
+  ButtonText,
+  VStack,
+  Center
+} from '@gluestack-ui/themed'
+
+const Example = () => {
+  const toast = useToast()
+  const toastActions = [
+    {
+      actionType: 'info',
+      title: 'Info',
+      description:
+        'Your order has been received and is being processed. You will receive a confirmation email shortly.'
+    },
+    {
+      actionType: 'success',
+      title: 'Success!',
+      description: 'Your changes have been saved successfully.'
+    },
+    {
+      actionType: 'warning',
+      title: 'Warning!',
+      description:
+        'Your account subscription will expire in 5 days. Please renew your subscription to avoid interruption of service.'
+    },
+    {
+      actionType: 'error',
+      title: 'Error!',
+      description:
+        'There was an error processing your request. Please try again later.'
+    },
+    {
+      actionType: 'attention',
+      title: 'Attention!',
+      description:
+        'Please review and accept our updated terms and conditions before continuing to use the application.'
+    }
+  ]
+  return (
+    <Center h='$80'>
+      <VStack space='md'>
+        {toastActions.map((action, index) => {
+          return (
+            <Button
+              key={index}
+              onPress={() => {
+                toast.show({
+                  placement: 'top',
+                  render: ({ id }) => {
+                    return (
+                      <Toast nativeID={id} action={action.actionType}>
+                        <VStack space='xs'>
+                          <ToastTitle>{action.title}</ToastTitle>
+                          <ToastDescription>
+                            {action.description}
+                          </ToastDescription>
+                        </VStack>
+                      </Toast>
+                    )
+                  }
+                })
+              }}
+            >
+              <ButtonText>{action.actionType}</ButtonText>
+            </Button>
+          )
+        })}
+      </VStack>
+    </Center>
+  )
+}
+```

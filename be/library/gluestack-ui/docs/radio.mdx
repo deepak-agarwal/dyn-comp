@@ -1,0 +1,92 @@
+---
+title: Radio
+description: The Radio component presents users with predefined choices and enables them to select only one option. It is commonly used for providing a single-choice selection in forms or surveys.
+pageTitle: Radio
+pageDescription: The Radio component presents users with predefined choices and enables them to select only one option. It is commonly used for providing a single-choice selection in forms or surveys.
+component:true
+showHeader: true
+---
+
+```jsx
+import { Radio } from '@gluestack-ui/themed'
+```
+
+### usage
+
+```jsx
+<RadioGroup>
+  <Radio>
+    <RadioIndicator>
+      <RadioIcon />
+    </RadioIndicator>
+    <RadioLabel />
+  </Radio>
+</RadioGroup>
+```
+
+### examples
+
+```jsx
+import {
+  Radio,
+  RadioGroup,
+  RadioIndicator,
+  RadioLabel,
+  RadioIcon,
+  CircleIcon
+} from '@gluestack-ui/themed'
+
+const RadioExample = (props) => {
+  return (
+    <RadioGroup>
+      <Radio value='change' {...props}>
+        <RadioIndicator mr='$2'>
+          <RadioIcon as={CircleIcon} strokeWidth={1} />
+        </RadioIndicator>
+        <RadioLabel>Label</RadioLabel>
+      </Radio>
+    </RadioGroup>
+  )
+}
+```
+
+```jsx
+import {
+  Center,
+  VStack,
+  Radio,
+  RadioGroup,
+  RadioIcon,
+  RadioIndicator,
+  RadioLabel,
+  CircleIcon
+} from '@gluestack-ui/themed'
+
+const RadioExample = (props) => {
+  const [values, setValues] = React.useState('Eng')
+  return (
+    <RadioGroup value={values} onChange={setValues}>
+      <VStack space='sm'>
+        <Radio value='Eng'>
+          <RadioIndicator mr='$2'>
+            <RadioIcon as={CircleIcon} />
+          </RadioIndicator>
+          <RadioLabel>English</RadioLabel>
+        </Radio>
+        <Radio value='Fre'>
+          <RadioIndicator mr='$2'>
+            <RadioIcon as={CircleIcon} />
+          </RadioIndicator>
+          <RadioLabel>French</RadioLabel>
+        </Radio>
+        <Radio value='Ger'>
+          <RadioIndicator mr='$2'>
+            <RadioIcon as={CircleIcon} />
+          </RadioIndicator>
+          <RadioLabel>German</RadioLabel>
+        </Radio>
+      </VStack>
+    </RadioGroup>
+  )
+}
+```

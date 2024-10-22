@@ -1,0 +1,135 @@
+---
+title: Button 
+component:true
+description: A button component is a graphical user interface element that enables users to act by clicking or tapping. It can be customized in size, shape, color, and behavior to fit the design of the application or website.
+pageTitle: Button
+pageDescription: A button component is a graphical user interface element that enables users to act by clicking or tapping. It can be customized in size, shape, color, and behavior to fit the design of the application or website.
+showHeader: true
+---
+
+```jsx
+import {
+  Button,
+  ButtonGroup,
+  ButtonText,
+  ButtonSpinner,
+  ButtonIcon
+} from '@gluestack-ui/themed'
+```
+
+###usage
+
+```jsx
+<ButtonGroup>
+  <Button>
+    <ButtonText />
+    <ButtonSpinner />
+    <ButtonIcon />
+  </Button>
+</ButtonGroup>
+```
+
+### Examples
+
+```jsx
+import {
+  Button,
+  ButtonGroup,
+  ButtonText,
+  ButtonSpinner,
+  ButtonIcon,
+  AddIcon
+} from '@gluestack-ui/themed'
+
+const ButtonExample = () => {
+  return (
+    <Button {...props}>
+      <ButtonText>Add </ButtonText>
+      <ButtonIcon as={AddIcon} />
+    </Button>
+  )
+}
+```
+
+```jsx
+import {
+  Button,
+  ButtonGroup,
+  ButtonText,
+  ButtonSpinner,
+  ButtonIcon,
+  AddIcon
+} from '@gluestack-ui/themed'
+
+const ButtonExample = () => {
+  return (
+    <Button isDisabled={true} bg='$darkBlue600' p='$3'>
+      <ButtonSpinner mr='$1' />
+      <ButtonText fontWeight='$medium' fontSize='$sm'>
+        Please wait...
+      </ButtonText>
+    </Button>
+  )
+}
+```
+
+```jsx
+import {
+  Button,
+  ButtonText,
+  ButtonIcon,
+  ButtonGroup,
+  Box,
+  Heading,
+  Text,
+  HStack
+} from '@gluestack-ui/themed'
+
+const ButtonExample = () => {
+  return (
+    <HStack
+      p='$12'
+      alignItems='center'
+      borderColor='$backgroundLight300'
+      borderWidth={1}
+      borderRadius='$lg'
+      sx={{
+        _dark: {
+          borderColor: '$backgroundDark700'
+        }
+      }}
+    >
+      <Box maxWidth='$64' mr='$9'>
+        <Heading mb='$1.5'>Was this page helpful?</Heading>
+        <Text fontSize='$sm'>
+          We use this feedback to improve the quality of our documentation.
+        </Text>
+      </Box>
+      <ButtonGroup space='md'>
+        <Button variant='outline' py='$2.5' action='secondary'>
+          <ButtonText fontSize='$sm' fontWeight='$medium'>
+            No
+          </ButtonText>
+        </Button>
+        <Button
+          variant='solid'
+          bg='$success700'
+          borderColor='$success700'
+          sx={{
+            ':hover': {
+              bg: '$success800'
+            },
+            ':active': {
+              bg: '$success700'
+            }
+          }}
+        >
+          <ButtonText fontSize='$sm' fontWeight='$medium'>
+            Yes
+          </ButtonText>
+        </Button>
+      </ButtonGroup>
+    </HStack>
+  )
+}
+```

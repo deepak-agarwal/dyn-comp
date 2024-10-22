@@ -1,0 +1,35 @@
+---
+title: Badge
+description: The badge component lets you quickly and easily add status indicators to your interface for improved usability. They are designed to be attention-grabbing and quickly convey important information.
+pageTitle: Badge
+pageDescription: The badge component lets you quickly and easily add status indicators to your interface for improved usability. They are designed to be attention-grabbing and quickly convey important information.
+component:true
+showHeader: true
+---
+
+```jsx
+import { Badge, BadgeText, BadgeIcon } from '@gluestack-ui/themed'
+```
+
+### usage
+
+```jsx
+<Badge>
+  <BadgeText />
+  <BadgeIcon />
+</Badge>
+```
+
+### example
+
+```jsx
+import { Badge, BadgeText, BadgeIcon, GlobeIcon } from '@gluestack-ui/themed'
+const BadgeExample = (props) => {
+  return (
+    <Badge {...props}>
+      <BadgeText>New feature</BadgeText>
+      <BadgeIcon as={GlobeIcon} ml='$2' />
+    </Badge>
+  )
+}
+```

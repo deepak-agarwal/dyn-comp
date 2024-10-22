@@ -1,0 +1,67 @@
+---
+title: Link
+description: With links, users can navigate seamlessly throughout a website. This component has a hyperlinked appearance for a user-friendly experience.
+pageTitle: Link
+pageDescription: With links, users can navigate seamlessly throughout a website. This component has a hyperlinked appearance for a user-friendly experience.
+component:true
+showHeader: true
+---
+
+```jsx
+import { Link } from '@gluestack-ui/themed'
+```
+
+### usage
+
+```jsx
+<Link>
+  <LinkText />
+</Link>
+```
+
+### Examples
+
+```jsx
+import React from 'react'
+import { Link, LinkText } from '@gluestack-ui/themed'
+
+const LinkExample = () => (
+  <Link href='https://gluestack.io/'>
+    <LinkText>gluestack</LinkText>
+  </Link>
+)
+```
+
+```jsx
+import React from 'react'
+import {
+  Link,
+  LinkText,
+  ArrowUpRightIcon,
+  Icon,
+  HStack,
+  Text
+} from '@gluestack-ui/themed'
+
+const LinkExample = () => (
+  <HStack>
+    <Text size='lg'>Go to </Text>
+    <Link href='https://gluestack.io/' isExternal>
+      <HStack alignItems='center'>
+        <LinkText size='lg'>Pinterest</LinkText>
+        <Icon
+          as={ArrowUpRightIcon}
+          size='lg'
+          color='$info600'
+          mt='$0.5'
+          sx={{
+            _dark: {
+              color: '$info300'
+            }
+          }}
+        />
+      </HStack>
+    </Link>
+  </HStack>
+)
+```

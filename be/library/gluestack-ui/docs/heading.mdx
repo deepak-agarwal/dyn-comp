@@ -1,0 +1,39 @@
+---
+title: Heading
+description: Heading component gives you the ability to create headings for your page with different sizes and symantics from h1 to h6.
+pageTitle: Heading
+pageDescription: Heading component gives you the ability to create headings for your page with different sizes and symantics from h1 to h6.
+showHeader: true
+component:true
+---
+
+### Import
+
+To use the component in your project, run the command below into your import statement. This will import the component from your components folder.
+
+```jsx
+import { Heading } from '@gluestack-ui/themed'
+```
+
+### Usage
+
+```jsx
+<Heading>Heading</Heading>
+```
+
+### Examples
+
+```jsx
+import { Heading } from '@gluestack-ui/themed'
+
+const ExampleHeading = () => {
+  const sizes = ['xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl', '5xl']
+  return (
+    <Center>
+      {sizes.map((size) => (
+        <Heading size={size}>{size}</Heading>
+      ))}
+    </Center>
+  )
+}
+```

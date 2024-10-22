@@ -1,0 +1,204 @@
+---
+title: FormControl
+description: By using FormControl, developers can provide important context to form elements. This context can include whether the element is invalid, disabled, or required.
+pageTitle: FormControl
+pageDescription: By using FormControl, developers can provide important context to form elements. This context can include whether the element is invalid, disabled, or required.
+showHeader: true
+component:true
+---
+
+```jsx
+import {
+  FormControl,
+  FormControlLabel,
+  FormControlLabelText,
+  FormControlHelper,
+  FormControlHelperText,
+  FormControlError,
+  FormControlErrorIcon,
+  FormControlErrorText
+} from '@gluestack-ui/themed'
+```
+
+### Usage
+
+```jsx
+<FormControl>
+  <FormControlLabel>
+    <FormControlLabelText />
+  </FormControlLabel>
+  <FormControlHelper>
+    <FormControlHelperText />
+  </FormControlHelper>
+  <FormControlError>
+    <FormControlErrorIcon />
+    <FormControlErrorText />
+  </FormControlError>
+</FormControl>
+```
+
+### Examples
+
+```jsx
+import React from 'react'
+import {
+  FormControl,
+  FormControlLabel,
+  FormControlLabelText,
+  FormControlHelper,
+  FormControlHelperText,
+  FormControlError,
+  FormControlErrorIcon,
+  FormControlErrorText,
+  Icon,
+  Input,
+  InputField,
+  AlertCircleIcon,
+  Box
+} from '@gluestack-ui/themed'
+
+const FormControlExample = () => {
+  return (
+    <Box h='$32' w='$72'>
+      <FormControl {...props}>
+        <FormControlLabel mb='$1'>
+          <FormControlLabelText>Password</FormControlLabelText>
+        </FormControlLabel>
+        <Input>
+          <InputField
+            type='password'
+            defaultValue='12345'
+            placeholder='password'
+          />
+        </Input>
+        <FormControlHelper>
+          <FormControlHelperText>
+            Must be atleast 6 characters.
+          </FormControlHelperText>
+        </FormControlHelper>
+        <FormControlError>
+          <FormControlErrorIcon as={AlertCircleIcon} />
+          <FormControlErrorText>
+            Atleast 6 characters are required.
+          </FormControlErrorText>
+        </FormControlError>
+      </FormControl>
+    </Box>
+  )
+}
+```
+
+```jsx
+import React, { useState } from 'react'
+import {
+  Box,
+  Center,
+  FormControl,
+  FormControlLabel,
+  FormControlLabelText,
+  FormControlHelper,
+  FormControlHelperText,
+  FormControlError,
+  FormControlErrorIcon,
+  FormControlErrorText,
+  Input,
+  InputField,
+  Button,
+  ButtonText,
+  Slider,
+  SliderTrack,
+  SliderFilledTrack,
+  SliderThumb,
+  Switch,
+  Modal,
+  ModalBackdrop,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  ModalFooter,
+  Text,
+  Heading,
+  VStack,
+  HStack
+} from '@gluestack-ui/themed'
+
+const FormControlExample = () => {
+  const [showModal, setShowModal] = useState(false)
+  return (
+    <Center h={500}>
+      <Button
+        py='$2.5'
+        px='$3'
+        bg='$darkBlue600'
+        onPress={() => {
+          setShowModal(true)
+        }}
+      >
+        <ButtonText>Change Settings</ButtonText>
+      </Button>
+      <Modal
+        isOpen={showModal}
+        onClose={() => {
+          setShowModal(false)
+        }}
+      >
+        <ModalBackdrop />
+        <ModalContent maxWidth='$96'>
+          <ModalBody p='$5'>
+            <VStack space='xs' mb='$4'>
+              <Heading>Change Settings</Heading>
+              <Text size='sm'>
+                Make modifications to the settings with ease.
+              </Text>
+            </VStack>
+            <VStack py='$2' space='xl'>
+              <FormControl>
+                <FormControlLabel>
+                  <FormControlLabelText>Name</FormControlLabelText>
+                </FormControlLabel>
+                <Input>
+                  <InputField value='Wade Warren' />
+                </Input>
+              </FormControl>
+              <FormControl>
+                <FormControlLabel>
+                  <FormControlLabelText>Email</FormControlLabelText>
+                </FormControlLabel>
+                <Input>
+                  <InputField value='wadewarren@sample.com' />
+                </Input>
+              </FormControl>
+              <FormControl>
+                <FormControlLabel>
+                  <FormControlLabelText>Volume</FormControlLabelText>
+                </FormControlLabel>
+                <Slider defaultValue={60} sliderTrackHeight={4}>
+                  <SliderTrack>
+                    <SliderFilledTrack />
+                  </SliderTrack>
+                  <SliderThumb />
+                </Slider>
+              </FormControl>
+              <FormControl>
+                <HStack space='sm'>
+                  <Switch size='sm' />
+                  <FormControlLabelText>Dark Mode</FormControlLabelText>
+                </HStack>
+              </FormControl>
+            </VStack>
+            <Button
+              mt='$4'
+              onPress={() => {
+                setShowModal(false)
+              }}
+            >
+              <ButtonText>Save Changes</ButtonText>
+            </Button>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
+    </Center>
+  )
+}
+```

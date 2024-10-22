@@ -1,0 +1,54 @@
+---
+title: Progress
+description: The Progress component is designed to display the progress of a task that involves multiple steps and takes some time to complete. It helps users stay informed about the current status of a lengthy process.
+pageTitle: Progress
+pageDescription: The Progress component is designed to display the progress of a task that involves multiple steps and takes some time to complete. It helps users stay informed about the current status of a lengthy process.
+component:true
+showHeader: true
+---
+
+```jsx
+import { Progress, ProgressFilledTrack } from '@gluestack-ui/themed'
+```
+
+### Usage
+
+```jsx
+<Progress>
+  <ProgressFilledTrack />
+</Progress>
+```
+
+### Example
+
+```jsx
+import { Progress, ProgressFilledTrack } from '@gluestack-ui/themed'
+
+const ProgressExample = () => {
+  return (
+    <Progress value={40} w={300} {...props}>
+      <ProgressFilledTrack />
+    </Progress>
+  )
+}
+```
+
+```jsx
+import {
+  Progress,
+  ProgressFilledTrack,
+  VStack,
+  Text
+} from '@gluestack-ui/themed'
+
+const ProgressExample = () => {
+  return (
+    <VStack space='lg'>
+      <Text size='lg'>Downloading 55%</Text>
+      <Progress value={55} w='$80' h='$1'>
+        <ProgressFilledTrack h='$1' />
+      </Progress>
+    </VStack>
+  )
+}
+```

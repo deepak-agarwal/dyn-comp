@@ -1,0 +1,86 @@
+---
+title: Icon
+description: Icons are often used to enhance the usability and accessibility of digital products by providing users with clear and intuitive visual cues. It serves as an intuitive and easily recognizable way to communicate with users.
+pageTitle: Icon
+pageDescription: Icons are often used to enhance the usability and accessibility of digital products by providing users with clear and intuitive visual cues. It serves as an intuitive and easily recognizable way to communicate with users.
+showHeader: true
+component: true
+---
+
+```jsx
+import { Icon } from '@gluestack-ui/themed'
+```
+
+### usage
+
+```jsx
+<Icon />
+```
+
+### example
+
+```jsx
+import React from 'react'
+
+import {
+  AddIcon,
+  ArrowLeftIcon,
+  ArrowRightIcon,
+  ArrowUpIcon,
+  ArrowDownIcon,
+  ChevronsLeftIcon,
+  ChevronsRightIcon,
+  ChevronsUpDownIcon,
+  AtSignIcon,
+  PaperclipIcon,
+  BellIcon,
+  CalendarDaysIcon,
+  MessageCircleIcon,
+  CheckIcon,
+  ChevronDownIcon,
+  ChevronUpIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  CloseIcon,
+  CopyIcon,
+  TrashIcon,
+  DownloadIcon,
+  GripVerticalIcon,
+  EditIcon,
+  MailIcon,
+  ExternalLinkIcon,
+  MenuIcon,
+  InfoIcon,
+  LinkIcon,
+  LockIcon,
+  RemoveIcon,
+  MoonIcon,
+  SlashIcon,
+  CheckCircleIcon,
+  PhoneIcon,
+  HelpCircleIcon,
+  RepeatIcon,
+  Repeat1Icon,
+  SearchIcon,
+  SettingsIcon,
+  LoaderIcon,
+  StarIcon,
+  SunIcon,
+  ClockIcon,
+  UnlockIcon,
+  EyeIcon,
+  EyeOffIcon,
+  AlertCircleIcon,
+  CloseCircleIcon,
+  ShareIcon,
+  CircleIcon,
+  FavouriteIcon,
+  GlobeIcon,
+  ThreeDotsIcon,
+  PlayIcon
+} from '@gluestack-ui/themed'
+
+const IconBasic = ({ size, name, ...props }: any) => {
+  return <Icon as={name} size={size} {...props} />
+}
+```

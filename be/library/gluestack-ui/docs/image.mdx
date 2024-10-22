@@ -1,0 +1,36 @@
+---
+title: Image
+description: With the Image component, you can enhance the look and feel of your app or website by incorporating compelling imagery.
+pageTitle: Image
+pageDescription: With the Image component, you can enhance the look and feel of your app or website by incorporating compelling imagery.
+component: true
+showHeader: true
+---
+
+```jsx
+import { Image } from '@gluestack-ui/themed'
+```
+
+```jsx
+<Image source={source} />
+```
+
+### example
+
+```jsx
+import React from 'react'
+import { Image } from '@gluestack-ui/themed'
+
+const ImageBasic = ({
+  uri = 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg'
+}: any) => {
+  return (
+    <Image
+      size='md'
+      source={{
+        uri: uri
+      }}
+    />
+  )
+}
+```

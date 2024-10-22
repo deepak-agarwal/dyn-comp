@@ -1,0 +1,39 @@
+---
+title: Spinner
+description: Spinners are designed to give visual cues to users that an action is being processed or that a change or result is expected. They are useful for improving the user experience by reducing frustration and uncertainty.
+pageTitle: Spinner
+component: true
+pageDescription: Spinners are designed to give visual cues to users that an action is being processed or that a change or result is expected. They are useful for improving the user experience by reducing frustration and uncertainty.
+showHeader: true
+---
+
+```jsx
+import { Spinner } from '@gluestack-ui/themed'
+export default () => <Spinner />
+```
+
+### Usage
+
+```jsx
+<Spinner />
+```
+
+### Example
+
+```jsx
+import { Spinner } from '@gluestack-ui/themed'
+export default () => <Spinner />
+```
+
+```jsx
+import { Spinner } from '@gluestack-ui/themed'
+
+const ExampleSpinner = () => (
+  <VStack space='md'>
+    <Spinner color='$indigo600' />
+    <Spinner color='$emerald600' />
+    <Spinner color='$amber600' />
+    <Spinner color='$fuchsia600' />
+  </VStack>
+)
+```

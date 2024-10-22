@@ -1,0 +1,32 @@
+---
+title: VStack
+description: VStack organizes items vertically in a layout. Alternatively, you can use Column as an alias for VStack to achieve the same layout.
+pageTitle: VStack
+pageDescription: VStack organizes items vertically in a layout. Alternatively, you can use Column as an alias for VStack to achieve the same layout.
+showHeader: true
+component:true
+---
+
+```jsx
+import { VStack } from '@gluestack-ui/themed'
+```
+
+### usage
+
+```jsx
+<VStack />
+```
+
+### Example
+
+```jsx
+import { VStack } from '@gluestack-ui/themed'
+
+const VstackExample = () => (
+  <VStack>
+    <Box bg='primary.500' w='100%' h='40px' />
+    <Box bg='primary.500' w='100%' h='40px' />
+    <Box bg='primary.500' w='100%' h='40px' />
+  </VStack>
+)
+```

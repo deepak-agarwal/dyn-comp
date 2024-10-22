@@ -1,0 +1,59 @@
+---
+title: Pressable
+description: By providing access to hover, pressed, and focus events, Pressable serves as a more flexible alternative to buttons at a lower level of abstraction. It is a useful primitive for advanced customization needs.
+pageTitle: Pressable
+pageDescription: By providing access to hover, pressed, and focus events, Pressable serves as a more flexible alternative to buttons at a lower level of abstraction. It is a useful primitive for advanced customization needs.
+component:true
+showHeader: true
+---
+
+```jsx
+import { Pressable } from '@gluestack-ui/themed'
+```
+
+### usage
+
+```jsx
+<Pressable />
+```
+
+### Examples
+
+#### Basic
+
+```jsx
+import React from 'react'
+import { Pressable } from '@gluestack-ui/themed'
+
+const PressableExample = () => {
+  return (
+    <Pressable
+      onPress={() => console.log('Hello')}
+      p='$5'
+      bg='$primary500'
+      sx={{ ':hover': { bg: '$primary400' } }}
+    >
+      <Text color='white'>Press me</Text>
+    </Pressable>
+  )
+}
+```
+
+```jsx
+import React from 'react'
+import { Pressable, Text } from '@gluestack-ui/themed'
+
+const PressableExample = () => {
+  return (
+    <Pressable
+      p='$16'
+      bg='$primary500'
+      sx={{ ':hover': { bg: '$primary400' } }}
+    >
+      {({ pressed }) => (
+        <Text color={pressed ? 'pink' : 'yellow'}>PRESSABLE</Text>
+      )}
+    </Pressable>
+  )
+}
+```

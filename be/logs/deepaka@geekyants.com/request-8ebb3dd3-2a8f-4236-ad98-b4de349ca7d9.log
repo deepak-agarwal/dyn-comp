@@ -1,0 +1,3 @@
+{"level":"info","message":"Request started","requestId":"8ebb3dd3-2a8f-4236-ad98-b4de349ca7d9"}
+{"level":"info","message":"[\n"}
+{"level":"info","message":{"body":{"componentId":"twitterprofile_ofwwp","query":"the follow and message button should be displayed innt he same row"},"email":"deepaka@geekyants.com","method":"POST","url":"/component/iterate"}}

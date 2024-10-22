@@ -1,0 +1,88 @@
+---
+title: AlertDialog
+description: AlertDialog effectively interrupts a user's flow and prompts them to take a specific action. It's commonly used for mandatory confirmations or call-to-actions.
+pageTitle: AlertDialog
+component:true
+---
+
+### Import
+
+To use the component in your project, run the command below into your import statement. This will import the component from your components folder.
+
+```jsx
+import {
+  AlertDialog,
+  AlertDialogBackdrop,
+  AlertDialogContent,
+  AlertDialogHeader,
+  AlertDialogCloseButton,
+  AlertDialogFooter,
+  AlertDialogBody
+} from '@gluestack-ui/themed'
+```
+
+### Usage
+
+```jsx
+<AlertDialog>
+  <AlertDialogBackdrop />
+  <AlertDialogContent>
+    <AlertDialogHeader>
+      <AlertDialogCloseButton />
+    </AlertDialogHeader>
+    <AlertDialogBody />
+    <AlertDialogFooter />
+  </AlertDialogContent>
+</AlertDialog>
+```
+
+### example
+
+```jsx
+import React, { useState } from 'react'
+import {
+  AlertDialog,
+  AlertDialogBackdrop,
+  AlertDialogContent,
+  AlertDialogHeader,
+  AlertDialogCloseButton,
+  AlertDialogFooter,
+  AlertDialogBody,
+  Button
+} from '@gluestack-ui/themed'
+
+const AlertDialogExample = () => {
+  const [isOpen, setIsOpen] = useState(false)
+  const onClose = () => setIsOpen(false)
+  const cancelRef = React.useRef()
+
+  return (
+    <>
+      <Button onClick={() => setIsOpen(true)}>Delete Customer</Button>
+      <AlertDialog
+        isOpen={isOpen}
+        leastDestructiveRef={cancelRef}
+        onClose={onClose}
+      >
+        <AlertDialogBackdrop />
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogCloseButton />
+          </AlertDialogHeader>
+          <AlertDialogBody>
+            Are you sure? You can't undo this action afterwards.
+          </AlertDialogBody>
+          <AlertDialogFooter>
+            <Button ref={cancelRef} onClick={onClose}>
+              Cancel
+            </Button>
+            <Button colorScheme='red' onClick={onClose} ml={3}>
+              Delete
+            </Button>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+    </>
+  )
+}
+```

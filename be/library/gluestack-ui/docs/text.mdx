@@ -1,0 +1,52 @@
+---
+title: Text
+description: Looking to add text to your gluestack-ui project? Check out our text component, which supports paragraphs and other formatting options.
+pageTitle: Text
+pageDescription: Looking to add text to your gluestack-ui project? Check out our text component, which supports paragraphs and other formatting options.
+showHeader: true
+component: true
+---
+
+```jsx
+import { Text } from '@gluestack-ui/themed'
+```
+
+### usage
+
+```jsx
+<Text>Text</Text>
+```
+
+### Example
+
+```jsx
+import { Text } from '@gluestack-ui/themed'
+
+const Example = () => <Text>Hello World!</Text>
+```
+
+```jsx
+import { Text } from '@gluestack-ui/themed'
+
+const Example = () => {
+  const sizes = [
+    'xs',
+    'sm',
+    'md',
+    'lg',
+    'xl',
+    '2xl',
+    '3xl',
+    '4xl',
+    '5xl',
+    '6xl'
+  ]
+  return (
+    <Center>
+      {sizes.map((size) => (
+        <Text size={size}>{size}</Text>
+      ))}
+    </Center>
+  )
+}
+```

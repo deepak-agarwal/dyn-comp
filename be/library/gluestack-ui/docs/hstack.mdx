@@ -1,0 +1,42 @@
+---
+title: HStack
+description: HStack arranges its child elements horizontally, making it a suitable layout component for creating a row of items. It is worth noting that Row is just an alternative name for HStack.
+pageTitle: HStack
+pageDescription: HStack arranges its child elements horizontally, making it a suitable layout component for creating a row of items. It is worth noting that Row is just an alternative name for HStack.
+component:true
+showHeader: true
+---
+
+```jsx
+import { HStack } from '@gluestack-ui/themed'
+```
+
+### Usage
+
+```jsx
+<HStack />
+```
+
+### Example
+
+```jsx
+import { HStack } from '@gluestack-ui/themed'
+
+const ExampleHStack = () => (
+  <HStack>
+    <Box w='$20' h='$20' bg='$blue300' />
+    <Box w='$20' h='$20' bg='$blue400' />
+    <Box w='$20' h='$20' bg='$blue500' />
+  </HStack>
+)
+```
+
+```jsx
+const ExampleHStack = () => (
+  <HStack space='md' reversed>
+    <Box w='$20' h='$20' bg='$blue300' />
+    <Box w='$20' h='$20' bg='$blue400' />
+    <Box w='$20' h='$20' bg='$blue500' />
+  </HStack>
+)
+```

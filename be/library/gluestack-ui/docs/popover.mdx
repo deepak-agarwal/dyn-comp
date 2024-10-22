@@ -1,0 +1,253 @@
+---
+title: Popover
+description: Popovers often provide contextual information or quick access to related actions without requiring the user to navigate to a different page or view.
+pageTitle: Popover
+pageDescription: Popovers often provide contextual information or quick access to related actions without requiring the user to navigate to a different page or view.
+component:true
+showHeader: true
+---
+
+```jsx
+import { Popover } from '@gluestack-ui/themed'
+```
+
+### Usage
+
+```jsx
+<Popover>
+  <PopoverBackdrop />
+  <PopoverContent>
+    <PopoverHeader>
+      <PopoverCloseButton />
+    </PopoverHeader>
+    <PopoverBody />
+    <PopoverFooter />
+  </PopoverContent>
+</Popover>
+```
+
+### Examples
+
+```jsx
+import React from 'react'
+import {
+  Popover,
+  Button,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverFooter,
+  PopoverCloseButton
+} from '@gluestack-ui/themed'
+
+const PopoverExample = () => {
+  return (
+    <Popover>
+      <PopoverContent>
+        <PopoverHeader>
+          <PopoverCloseButton />
+        </PopoverHeader>
+        <PopoverBody>
+          <p>Are you sure you want to continue?</p>
+        </PopoverBody>
+        <PopoverFooter>
+          <Button variant='ghost'>Cancel</Button>
+          <Button colorScheme='blue' ml={3}>
+            Apply
+          </Button>
+        </PopoverFooter>
+      </PopoverContent>
+    </Popover>
+  )
+}
+```
+
+```jsx
+import React, { useState } from 'react'
+import {
+        Center,
+        Text: PopoverText,
+        Heading,
+        Popover,
+        PopoverBackdrop,
+        PopoverContent,
+        PopoverHeader,
+        PopoverBody,
+        PopoverFooter,
+        PopoverCloseButton,
+        Button,
+        ButtonGroup,
+        ButtonText,
+        CloseIcon,
+        Icon,
+} from '@gluestack-ui/themed'
+
+const PopoverExample = () => {
+  const [isOpen, setIsOpen] = useState(false)
+  const handleOpen = () => {
+    setIsOpen(true)
+  }
+  const handleClose = () => {
+    setIsOpen(false)
+  }
+  return (
+    <Popover
+      isOpen={isOpen}
+      onClose={handleClose}
+      onOpen={handleOpen}
+      {...props}
+      trigger={(triggerProps) => {
+        return (
+          <Button {...triggerProps}>
+            <ButtonText>Popover</ButtonText>
+          </Button>
+        )
+      }}
+    >
+      <PopoverBackdrop />
+      <PopoverContent>
+        <PopoverHeader>
+          <Heading size='lg'>Welcome!</Heading>
+          <PopoverCloseButton>
+            <Icon as={CloseIcon} />
+          </PopoverCloseButton>
+        </PopoverHeader>
+        <PopoverBody>
+          <Text size='sm'>
+            Join the product tour and start creating your own checklist. Are you
+            ready to jump in?
+          </Text>
+        </PopoverBody>
+        <PopoverFooter>
+          <Text size='xs' flex={1}>
+            Step 2 of 3
+          </Text>
+          <ButtonGroup space='md'>
+            <Button variant='outline' action='secondary' onPress={handleClose}>
+              <ButtonText>Back</ButtonText>
+            </Button>
+            <Button onPress={handleClose}>
+              <ButtonText>Next</ButtonText>
+            </Button>
+          </ButtonGroup>
+        </PopoverFooter>
+      </PopoverContent>
+    </Popover>
+  )
+}
+```
+
+```jsx
+import React, { useState } from 'react'
+import {
+        Box,
+        Heading,
+        Text: PopoverText,
+        Popover,
+        PopoverBackdrop,
+        PopoverContent,
+        PopoverHeader,
+        PopoverBody,
+        PopoverFooter,
+        PopoverCloseButton,
+        Pressable,
+        Button,
+        ButtonText,
+        HStack,
+        VStack,
+        CircleIcon,
+        PhoneIcon,
+        Clock3Icon,
+        MailIcon,
+        Avatar,
+        AvatarFallbackText,
+        Icon,
+} from '@gluestack-ui/themed'
+
+const PopoverExample = () => {
+   return <Box h='$80'>
+        {\/* PhoneIcon, Clock3Icon, MailIcon are imported from 'lucide-react-native' *\/}
+          <Popover
+            trigger={(triggerProps) => {
+              return (
+                <HStack>
+                  <Pressable
+                    borderRadius='$full'
+                    {...triggerProps}
+                  >
+                    <Avatar bg='$indigo600'>
+                      <AvatarFallbackText >
+                        Kevin James
+                      </AvatarFallbackText>
+                    </Avatar>
+                  </Pressable>
+                  <VStack ml='$2.5'>
+                    <Heading fontSize='$md'>
+                      Kevin James
+                    </Heading>
+                    <Text size='sm'>
+                      Hi Rachel, What’s up?
+                    </Text>
+                  </VStack>
+                </HStack>
+              );
+            }}
+          >
+            <PopoverBackdrop/>
+            <PopoverContent w='$80'>
+              <PopoverHeader  px='$5' pt='$5'>
+                <HStack>
+                  <Avatar bg='$indigo600' >
+                    <AvatarFallbackText>
+                      Kevin James
+                    </AvatarFallbackText>
+                  </Avatar>
+                  <VStack ml='$2.5'>
+                    <Heading fontSize='$md'>
+                      Kevin James
+                    </Heading>
+                    <HStack alignItems='center'>
+                      <CircleIcon color='$green700' h='$2' w='$2'/>
+                      <Text size='sm'  pl='$1.5'>
+                        Active
+                      </Text>
+                    </HStack>
+                  </VStack>
+                </HStack>
+              </PopoverHeader>
+              <PopoverBody  px='$5' pb='$5'>
+                <VStack space='lg'>
+                  <VStack space='sm'>
+                    <HStack alignItems='center'>
+                      <Icon as={PhoneIcon} size='sm' />
+                      <Text size='sm'  ml='$1.5'>
+                        (603) 555-0123
+                      </Text>
+                    </HStack>
+                    <HStack alignItems='center'>
+                      <Icon as={Clock3Icon} size='sm'/>
+                      <Text size='sm'  ml='$1.5'>
+                        5:21 PM local time
+                      </Text>
+                    </HStack>
+                    <HStack alignItems='center'>
+                      <Icon as={MailIcon} size='sm'/>
+                      <Text size='sm'  ml='$1.5'>
+                        kevinjames@sample.com
+                      </Text>
+                    </HStack>
+                  </VStack>
+                  <Button bg='$darkBlue700' sx={{
+                    _dark:{
+                      bg:"$darkBlue500"
+                    }
+                  }}>
+                    <ButtonText>View Profile</ButtonText>
+                  </Button>
+                </VStack>
+              </PopoverBody>
+            </PopoverContent>
+          </Popover>
+        </Box>
+}
+```
